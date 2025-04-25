@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 4%;
+
+    /* Gold primary */
+    --primary: 43 74% 49%;
+    --primary-foreground: 20 14% 4%;
+
+    /* Brown secondary */
+    --secondary: 28 25% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+
+    --accent: 43 74% 49%;
+    --accent-foreground: 20 14% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-playfair font-bold;
+  }
+
+  p, a, button, li {
+    @apply font-inter;
+  }
+}
+
+@layer components {
+  .presidential-container {
+    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+  }
+
+  .presidential-button {
+    @apply bg-primary text-black font-bold py-3 px-6 hover:bg-primary/90 transition-all duration-300 uppercase tracking-wider text-sm;
+  }
+
+  .dropdown-link {
+    @apply block w-full text-left px-4 py-3 text-[15px] hover:text-primary transition-colors duration-200 border-l-2 border-transparent hover:border-primary;
+  }
+
+  .nav-link {
+    @apply inline-block py-2 relative text-foreground hover:text-primary transition-colors duration-200 font-medium tracking-wide;
+  }
+
+  .executive-heading {
+    @apply font-playfair font-bold text-4xl md:text-5xl lg:text-6xl mb-6;
+  }
+
+  .smaller-capabilities-heading {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .executive-subheading {
+    @apply font-playfair font-medium text-2xl md:text-3xl mb-4;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gold-gradient {
+    @apply bg-gradient-to-r from-[#D4AF37] via-[#F2D67A] to-[#C5A028] text-transparent bg-clip-text;
+  }
+}
